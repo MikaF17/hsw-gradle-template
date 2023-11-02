@@ -2,7 +2,7 @@ package hsw.gradle.application;
 import java.math.BigInteger;
 
 public class IBAN {
-    private String IBANnumber;
+    private final String IBANnumber;
 
     IBAN(String IBANnumber) {
         this.IBANnumber = IBANnumber;
@@ -16,6 +16,10 @@ public class IBAN {
         IBANnumber = this.IBANnumber;
 
         if(IBANnumber.length() != 22) {
+            return false;
+        }
+
+        if(!IBANnumber.substring(0,1).equalsIgnoreCase("DE")){
             return false;
         }
         //System.out.println(IBANnumber);
