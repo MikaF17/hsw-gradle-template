@@ -33,59 +33,14 @@ public class IBAN {
         //System.out.println(IBANnumber);
 
         // step 3: replace characters by digits
-        IBANnumber = IBANnumber.replace("A", "10");
-        IBANnumber = IBANnumber.replace("B", "11");
-        IBANnumber = IBANnumber.replace("C", "12");
-        IBANnumber = IBANnumber.replace("D", "13");
-        IBANnumber = IBANnumber.replace("E", "14");
-        IBANnumber = IBANnumber.replace("F", "15");
-        IBANnumber = IBANnumber.replace("G", "16");
-        IBANnumber = IBANnumber.replace("H", "17");
-        IBANnumber = IBANnumber.replace("I", "18");
-        IBANnumber = IBANnumber.replace("J", "19");
-        IBANnumber = IBANnumber.replace("K", "20");
-        IBANnumber = IBANnumber.replace("L", "21");
-        IBANnumber = IBANnumber.replace("M", "22");
-        IBANnumber = IBANnumber.replace("N", "23");
-        IBANnumber = IBANnumber.replace("O", "24");
-        IBANnumber = IBANnumber.replace("P", "25");
-        IBANnumber = IBANnumber.replace("Q", "26");
-        IBANnumber = IBANnumber.replace("R", "27");
-        IBANnumber = IBANnumber.replace("S", "28");
-        IBANnumber = IBANnumber.replace("T", "29");
-        IBANnumber = IBANnumber.replace("U", "30");
-        IBANnumber = IBANnumber.replace("V", "31");
-        IBANnumber = IBANnumber.replace("W", "32");
-        IBANnumber = IBANnumber.replace("X", "33");
-        IBANnumber = IBANnumber.replace("Y", "34");
-        IBANnumber = IBANnumber.replace("Z", "35");
-
-        IBANnumber = IBANnumber.replace("a", "10");
-        IBANnumber = IBANnumber.replace("b", "11");
-        IBANnumber = IBANnumber.replace("c", "12");
-        IBANnumber = IBANnumber.replace("d", "13");
-        IBANnumber = IBANnumber.replace("e", "14");
-        IBANnumber = IBANnumber.replace("f", "15");
-        IBANnumber = IBANnumber.replace("g", "16");
-        IBANnumber = IBANnumber.replace("h", "17");
-        IBANnumber = IBANnumber.replace("i", "18");
-        IBANnumber = IBANnumber.replace("j", "19");
-        IBANnumber = IBANnumber.replace("k", "20");
-        IBANnumber = IBANnumber.replace("l", "21");
-        IBANnumber = IBANnumber.replace("m", "22");
-        IBANnumber = IBANnumber.replace("n", "23");
-        IBANnumber = IBANnumber.replace("o", "24");
-        IBANnumber = IBANnumber.replace("p", "25");
-        IBANnumber = IBANnumber.replace("q", "26");
-        IBANnumber = IBANnumber.replace("r", "27");
-        IBANnumber = IBANnumber.replace("s", "28");
-        IBANnumber = IBANnumber.replace("t", "29");
-        IBANnumber = IBANnumber.replace("u", "30");
-        IBANnumber = IBANnumber.replace("v", "31");
-        IBANnumber = IBANnumber.replace("w", "32");
-        IBANnumber = IBANnumber.replace("x", "33");
-        IBANnumber = IBANnumber.replace("y", "34");
-        IBANnumber = IBANnumber.replace("z", "35");
+        for (int i = 10; i<=35; i++){
+            char current = (char) ('A' + (i-10));
+            char currentSmall = (char) ('a' + (i-10));
+            if(IBANnumber.contains(String.valueOf(current)) || IBANnumber.contains(String.valueOf(currentSmall))){
+                IBANnumber = IBANnumber.replace(String.valueOf(current), String.valueOf(i));
+                IBANnumber = IBANnumber.replace(String.valueOf(currentSmall), String.valueOf(i));
+            }
+        }
         //System.out.println(IBANnumber);
 
         BigInteger IBANnumberBigInt = new BigInteger(IBANnumber);
