@@ -8,6 +8,7 @@ public class IBAN {
         this.IBANnumber = IBANnumber;
     }
 
+
     public boolean check(String IBANnumber) {
         // explanation source: https://de.wikipedia.org/wiki/Internationale_Bankkontonummer#Prüfsumme
         // step 1: IBAN needs to be 18 digits long
@@ -58,6 +59,33 @@ public class IBAN {
         IBANnumber = IBANnumber.replace("X", "33");
         IBANnumber = IBANnumber.replace("Y", "34");
         IBANnumber = IBANnumber.replace("Z", "35");
+
+        IBANnumber = IBANnumber.replace("a", "10");
+        IBANnumber = IBANnumber.replace("b", "11");
+        IBANnumber = IBANnumber.replace("c", "12");
+        IBANnumber = IBANnumber.replace("d", "13");
+        IBANnumber = IBANnumber.replace("e", "14");
+        IBANnumber = IBANnumber.replace("f", "15");
+        IBANnumber = IBANnumber.replace("g", "16");
+        IBANnumber = IBANnumber.replace("h", "17");
+        IBANnumber = IBANnumber.replace("i", "18");
+        IBANnumber = IBANnumber.replace("j", "19");
+        IBANnumber = IBANnumber.replace("k", "20");
+        IBANnumber = IBANnumber.replace("l", "21");
+        IBANnumber = IBANnumber.replace("m", "22");
+        IBANnumber = IBANnumber.replace("n", "23");
+        IBANnumber = IBANnumber.replace("o", "24");
+        IBANnumber = IBANnumber.replace("p", "25");
+        IBANnumber = IBANnumber.replace("q", "26");
+        IBANnumber = IBANnumber.replace("r", "27");
+        IBANnumber = IBANnumber.replace("s", "28");
+        IBANnumber = IBANnumber.replace("t", "29");
+        IBANnumber = IBANnumber.replace("u", "30");
+        IBANnumber = IBANnumber.replace("v", "31");
+        IBANnumber = IBANnumber.replace("w", "32");
+        IBANnumber = IBANnumber.replace("x", "33");
+        IBANnumber = IBANnumber.replace("y", "34");
+        IBANnumber = IBANnumber.replace("z", "35");
         //System.out.println(IBANnumber);
 
         BigInteger IBANnumberBigInt = new BigInteger(IBANnumber);

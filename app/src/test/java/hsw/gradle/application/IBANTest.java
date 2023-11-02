@@ -20,4 +20,10 @@ public class IBANTest {
         IBAN classUnderTest = new IBAN(myIBAN);
         assertFalse(classUnderTest.check(myIBAN));
     }
+
+    @Test void IBANIgnoreCase() {
+        String myIBAN = "de68210501700012345678";
+        IBAN classUnderTest = new IBAN(myIBAN);
+        assertTrue(classUnderTest.check(myIBAN));
+    }
 }
